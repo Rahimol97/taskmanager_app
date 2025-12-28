@@ -11,7 +11,12 @@ router.get("/me", authmiddleware, (req, res) => {
 });
 
 router.post("/logout", authmiddleware, (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,        // REQUIRED in production
+    sameSite: "none"     // REQUIRED for cross-site
+  });
+
   res.json({ message: "Logged out successfully" });
 });
 export default router;
