@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+:root {
+  --purple-dark: rgb(77, 43, 140);
+  --purple-mid: rgb(133, 64, 157);
+  --orange: rgb(238, 167, 39);
+  --yellow: rgb(255, 239, 95);
+}
+
+
