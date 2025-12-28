@@ -1,7 +1,7 @@
 import User from "../models/userModel.js";
 import jwt from "jsonwebtoken";
 
-export const authmiddleware = async(req,res,next)=>
+const authmiddleware = async(req,res,next)=>
 {
     try{
 
@@ -21,3 +21,4 @@ catch(error){
     res.status(401).json({message:"unauthorized access"});
 }
 }
+export default authmiddleware;

@@ -3,7 +3,12 @@ import Task from "../models/taskModel.js";
 
 export const createTask = async(req,res)=>{
     try{
-    const task = await Task.create(req.body);
+    const task = await Task.create({
+      title: req.body.title,
+      description: req.body.description,
+      status: req.body.status,
+      user: req.loggeduser.id, // ✅ ADD USER ID
+    });
     res.status(201).json({message:"Task created"});
 
     }
@@ -14,7 +19,9 @@ export const createTask = async(req,res)=>{
 }
 export const getAllTask = async(req,res)=>{
     try{
-const tasks = await Task.find();
+const tasks = await Task.find({ user: req.loggeduser.id }).sort({
+      createdAt: -1,
+    });
 res.status(200).json(tasks);
     }
     catch(err)
