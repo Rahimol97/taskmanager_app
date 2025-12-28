@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 app.use(cookieParser());
 app.use(cors({
-  origin:"https://taskmanager-app-smoky.vercel.app",
+  origin:"http://localhost:5173",
   credentials: true
 })); 
 

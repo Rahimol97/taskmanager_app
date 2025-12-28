@@ -30,9 +30,12 @@ const handleLogout = async () => {
   console.log("logout clicked");
   try {
     await api.post("/users/logout");
+        navigate("/login");
         setUsername(null);
+        console.log(username,"nhbdhfd");
+        
          window.dispatchEvent(new Event("auth-change"));
-    navigate("/login");
+    
 
   } catch {
     alert("Logout failed");
