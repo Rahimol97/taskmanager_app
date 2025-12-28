@@ -20,7 +20,7 @@ function Login() {
     setMessge(response.data.message);
     setData({username:" ",password:" "})
     window.dispatchEvent(new Event("auth-change"));
-    navigate("/");
+  navigate("/");
 
     }
     catch(error){

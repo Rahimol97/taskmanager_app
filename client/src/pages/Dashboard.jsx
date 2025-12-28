@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState([]);
-  const [username, setUsername] = useState(null);
 
 const navigate = useNavigate();
 useEffect(() => {
