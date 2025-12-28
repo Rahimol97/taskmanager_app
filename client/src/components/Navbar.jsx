@@ -29,7 +29,7 @@ const checkUser = async () => {
 const handleLogout = async () => {
   console.log("logout clicked");
   try {
-    await api.post("/users/logout");
+    await api.post("/users/logout", {}, { withCredentials: true });
         navigate("/login");
         setUsername(null);
         console.log(username,"nhbdhfd");
@@ -38,7 +38,7 @@ const handleLogout = async () => {
     
 
   } catch {
-    alert("Logout failed");
+    alert("Logout failed");j
   }
 };
 
